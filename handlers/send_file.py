@@ -11,7 +11,7 @@ from handlers.helpers import str_to_b64
 async def reply_forward(message: Message, file_id: int):
     try:
         await message.reply_text(
-            f"Files will be deleted in 30 minutes to avoid copyright issues. Please forward and save them.",
+            f"➜ 𝖥𝗂𝗅𝖾𝗌 𝖶𝗂𝗅𝗅 𝖡𝖾 **𝖠𝗎𝗍𝗈 𝖣𝖾𝗅𝖾𝗍𝖾𝖽** 𝖨𝗇 10 𝖬𝗂𝗇𝗎𝗍𝖾𝗌 𝖳𝗈 𝖠𝗏𝗈𝗂𝖽 𝖢𝗈𝗉𝗒𝗋𝗂𝗀𝗁𝗍 𝖨𝗌𝗌𝗎𝖾𝗌. **𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝖠𝗇𝖽 𝖲𝖺𝗏𝖾**.",
             disable_web_page_preview=True,
             quote=True
         )
@@ -35,7 +35,7 @@ async def media_forward(bot: Client, user_id: int, file_id: int):
 async def send_media_and_reply(bot: Client, user_id: int, file_id: int):
     sent_message = await media_forward(bot, user_id, file_id)
     await reply_forward(message=sent_message, file_id=file_id)
-    asyncio.create_task(delete_after_delay(sent_message, 1800))
+    asyncio.create_task(delete_after_delay(sent_message, 600))
 
 async def delete_after_delay(message, delay):
     await asyncio.sleep(delay)
