@@ -64,14 +64,14 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
                 InlineKeyboardButton("Delete Batch", callback_data="closeMessage")
             ]])
         )
-        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=VJBotz_{str_to_b64(str(SaveMessage.id))}"
+        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=InfinityRobots_{str_to_b64(str(SaveMessage.id))}"
         short_link = get_short(share_link)
         await editable.edit(
-            f"**Batch Files Stored in my Database!**\n\nHere is the Permanent Link of your files: <code>{short_link}</code> \n\n"
-            f"Just Click the link to get your files!",
+            f"**𝖡𝖺𝗍𝖼𝗁 𝖥𝗂𝗅𝖾𝗌 𝖲𝗍𝗈𝗋𝖾𝖽 𝖨𝗇 𝖬𝗒 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾**\n\n𝖧𝖾𝗋𝖾 𝖨𝗌 𝖳𝗁𝖾 𝖯𝖾𝗋𝗆𝖺𝗇𝖾𝗇𝗍 𝖫𝗂𝗇𝗄 𝖮𝖿 𝖸𝗈𝗎𝗋 𝖥𝗂𝗅𝖾𝗌: <code>{short_link}</code> \n\n"
+            f"Just Click The Link To Get Your Files!",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Original Link", url=share_link),
-                  InlineKeyboardButton("Short Link", url=short_link)]]
+                [[InlineKeyboardButton("𝖲𝗁𝖺𝗋𝖾𝖺𝖻𝗅𝖾 𝖫𝗂𝗇𝗄", url=share_link),
+                  InlineKeyboardButton("𝖲𝗁𝗈𝗋𝗍𝗇𝖾𝗋", url=short_link)]]
             ),
             disable_web_page_preview=True
         )
@@ -79,8 +79,8 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             chat_id=int(Config.LOG_CHANNEL),
             text=f"#BATCH_SAVE:\n\n[{editable.reply_to_message.from_user.first_name}](tg://user?id={editable.reply_to_message.from_user.id}) Got Batch Link!",
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Original Link", url=short_link),
-                                                InlineKeyboardButton("Short Link", url=share_link)]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("𝖲𝗁𝖺𝗋𝖾𝖺𝖻𝗅𝖾 𝖫𝗂𝗇𝗄", url=short_link),
+                                                InlineKeyboardButton("𝖲𝗁𝗈𝗋𝗍𝗇𝖾𝗋", url=share_link)]])
         )
     except Exception as err:
         await editable.edit(f"Something Went Wrong!\n\n**Error:** `{err}`")
@@ -103,15 +103,15 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         await forwarded_msg.reply_text(
             f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!",
             disable_web_page_preview=True)
-        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=VJBotz_{str_to_b64(file_er_id)}"
+        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=InfinityRobots_{str_to_b64(file_er_id)}"
         short_link = get_short(share_link)
         await editable.edit(
-            "**Your File Stored in my Database!**\n\n"
-            f"Here is the Permanent Link of your file: <code>{short_link}</code> \n\n"
-            "Just Click the link to get your file!",
+            "**𝖸𝗈𝗎𝗋 𝖥𝗂𝗅𝖾 𝖲𝗍𝗈𝗋𝖾𝖽 𝖨𝗇 𝖬𝗒 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾**\n\n"
+            f"𝖧𝖾𝗋𝖾 𝖨𝗌 𝖳𝗁𝖾 𝖯𝖾𝗋𝗆𝖺𝗇𝖾𝗇𝗍 𝖫𝗂𝗇𝗄 𝖮𝖿 𝖸𝗈𝗎 𝖥𝗂𝗅𝖾: <code>{short_link}</code> \n\n"
+            "𝖩𝗎𝗌𝗍𝖻𝖢𝗅𝗂𝖼𝗄 𝖳𝗁𝖾 𝖫𝗂𝗇𝗄 𝖳𝗈 𝖦𝖾𝗍 𝖸𝗈𝗎𝗋 𝖥𝗂𝗅𝖾.",
             reply_markup=InlineKeyboardMarkup(
-               [[InlineKeyboardButton("Original Link", url=share_link),
-                  InlineKeyboardButton("Short Link", url=short_link)]]
+               [[InlineKeyboardButton("𝖲𝗁𝖺𝗋𝖾𝖺𝖻𝗅𝖾 𝖫𝗂𝗇𝗄", url=share_link),
+                  InlineKeyboardButton("𝖲𝗁𝗈𝗋𝗍𝗇𝖾𝗋", url=short_link)]]
             ),
             disable_web_page_preview=True
         )
@@ -132,7 +132,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             )
         await save_media_in_channel(bot, editable, message)
     except Exception as err:
-        await editable.edit(f"Something Went Wrong!\n\n**Error:** `{err}`")
+        await editable.edit(f"𝖲𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝖶𝖾𝗇𝗍 𝖶𝗋𝗈𝗇𝗀!\n\n**𝖤𝗋𝗋𝗈𝗋:** `{err}`")
         await bot.send_message(
             chat_id=int(Config.LOG_CHANNEL),
             text="#ERROR_TRACEBACK:\n"
